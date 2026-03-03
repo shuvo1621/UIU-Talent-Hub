@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8e8e8;
+}
+
+#parent {
+    width: 100%;
+    background-color: #e8e8e8;
+    padding-bottom: 20px;
+    padding-top: 60px;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    z-index: 1000;
+    border-bottom: 1px solid #ddd;
+}
+
+#logo_section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#logoth {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    background-color: #ff5722;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-text h5 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.brand-text h6 {
+    font-size: 12px;
+    color: #ff5722;
+    margin: 0;
+}
+
+#header_right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #ff5722;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.icon-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.join-btn {
+    background-color: #ff5722;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#main_content {
+    width: 100%;
+    padding: 20px 40px;
+}
+
+#cover_picture {
+    width: 100%;
+    height: 200px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 80px;
+}
+
+#cover_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#edit_profile_btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#profile_section {
+    display: flex;
+    gap: 20px;
+    margin-top: -100px;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+#profile_picture {
+    width: 150px;
+    height: 150px;
+    background: #ffffff;
+    border: 4px solid #FFFFFF;
+    border-radius: 16px;
+}
+
+#profile_img {
+    width: 100%;
+    height: 100%;
+}
+
+#profile_info {
+    flex: 1;
+    padding-top: 80px;
+}
+
+#profile_name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+#profile_id {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+#profile_bio {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+    max-width: 600px;
+}
+
+#profile_buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.profile_btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    color: #333;
+}
+
+#analytics_title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#stats_grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat_card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    width: calc(50% - 10px);
+    min-height: 120px;
+}
+
+.stat_card.orange {
+    background-color: #ff6b3d;
+    color: white;
+}
+
+.stat_icon {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 40px;
+}
+
+.stat_icon img {
+    width: 100%;
+    height: 100%;
+}
+
+.stat_number_badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.stat_number {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat_label {
+    font-size: 14px;
+}
+
+#posts_title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#posts_grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.post_card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    width: calc(33.33% - 14px);
+}
+
+.post_image_container {
+    width: 100%;
+    height: 150px;
+    position: relative;
+}
+
+.post_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post_badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post_badge img {
+    width: 20px;
+    height: 20px;
+}
+
+.post_content {
+    padding: 15px;
+}
+
+.post_title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.post_date {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.post_stats {
+    display: flex;
+    gap: 15px;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.post_stat_item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.post_stat_item img {
+    width: 14px;
+    height: 14px;
+}
+
+.vote_container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.vote_btn {
+    background: none;
+    border: none;
+    width: 16px;
+    height: 16px;
+}
+
+.vote_btn img {
+    width: 100%;
+    height: 100%;
+}
+
+.vote_count {
+    font-size: 12px;
+}
+
+.post_actions {
+    display: flex;
+    gap: 10px;
+}
+
+.post_btn {
+    flex: 1;
+    padding: 6px 0;
+    border: 1px solid #ddd;
+    background-color: white;
+    border-radius: 6px;
+    font-size: 12px;
+}
