@@ -1,0 +1,25 @@
+# OS files
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project files
+node_modules/
+dist/
+build/
+uploads/audios/*
+uploads/videos/*
+uploads/thumbs/*
+!uploads/audios/.gitkeep
+!uploads/videos/.gitkeep
+!uploads/thumbs/.gitkeep
+
+# Sensitive files
+includes/db_connect_local.php
+.env
