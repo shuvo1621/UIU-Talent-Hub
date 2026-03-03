@@ -1,0 +1,363 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Font inherited from global shell (navbar.css) */
+}
+
+body {
+    background: #f2f2f2;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.logo span {
+    color: #ff6a00;
+}
+
+.join-btn {
+    background: #ff6a00;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.category {
+    padding: 40px 60px;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.cat-card {
+    flex: 1;
+    height: 350px;
+    border-radius: 20px;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    /* Simplified shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background-position: center;
+    background-size: cover;
+    /* cover is usually best for full cards, but user complained. Let's try centering. */
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.cat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Specific Card Backgrounds - adjusting to show full image content if possible */
+.yellow {
+    background-image: url('../../assets/images/songs.png');
+    background-position: center center;
+}
+
+.white {
+    background-image: url('../../assets/images/poems.png');
+    background-position: center center;
+}
+
+.orange {
+    background-image: url('../../assets/images/podcast.png');
+    background-position: center center;
+}
+
+.gray {
+    background-image: url('../../assets/images/storytelling.png');
+    background-position: center center;
+}
+
+/* Active State for Filter */
+.cat-card.active {
+    box-shadow: 0 0 0 4px #ff6a00;
+    transform: scale(0.98);
+}
+
+.audio-section {
+    padding: 30px 60px;
+    padding-bottom: 120px;
+}
+
+/* ========================================
+   Redesigned Audio Card (Long Layout)
+   ======================================== */
+.audio-card-long {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    display: flex;
+    gap: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.audio-card-long:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Left Column: Art + Play --- */
+.ac-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+    width: 130px;
+}
+
+.ac-art {
+    width: 130px;
+    height: 130px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ac-play-btn {
+    width: 100%;
+    background: #ff6a00;
+    border: none;
+    color: white;
+    padding: 10px 0;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ac-play-btn:hover {
+    background: #e65c00;
+}
+
+.audio-info {
+    flex: 1;
+}
+
+.audio-info h3 {
+    margin-top: 10px;
+}
+
+.audio-info p {
+    font-size: 14px;
+    color: gray;
+}
+
+/* Reaction System */
+.like-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    margin-left: 20px;
+}
+
+.like-btn {
+    background: rgba(0, 0, 0, 0.05);
+    /* Adapted for white background */
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 16px;
+    color: #888;
+}
+
+.like-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: scale(1.1);
+    color: #555;
+}
+
+.like-btn.liked {
+    color: #ff3b3b;
+    background: white;
+    border-color: #ff3b3b;
+    box-shadow: 0 2px 8px rgba(255, 59, 59, 0.2);
+}
+
+.like-count {
+    font-size: 10px;
+    font-weight: 700;
+    color: #888;
+}
+
+@keyframes heartPop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.4);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.liked {
+    animation: heartPop 0.4s ease-out;
+}
+
+/* --- Right Column: Waveform + Meta --- */
+.ac-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    /* Critical for internal flex scrolling/sizing */
+}
+
+.ac-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #222;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ac-wave-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.waveform-container {
+    flex: 1;
+    height: 60px;
+    position: relative;
+}
+
+/* --- Meta Row (Bottom) --- */
+.ac-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 10px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+}
+
+.ac-author {
+    display: flex;
+    flex-direction: column;
+}
+
+.ac-author .by {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #999;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.ac-author .name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #444;
+}
+
+.stats-mini {
+    font-size: 11px;
+    color: #aaa;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    gap: 15px;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    width: 500px;
+    padding: 20px;
+    border-radius: 15px;
+    display: none;
+    z-index: 1100;
+}
+
+.upload-box {
+    border: 2px dashed #ff6f00;
+    padding: 40px;
+    text-align: center;
+    margin: 20px 0;
+    border-radius: 12px;
+}
+
+.publish-btn {
+    background: #ff6f00;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+}
